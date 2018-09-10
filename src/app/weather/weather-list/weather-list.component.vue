@@ -1,4 +1,4 @@
-<template src="./weather-list.component.vue.html" lang="html">
+<template lang="html">
 <div class="weather_list">
     <ul class="weather_list-cities">
         <li class="weather_list-city" v-for="(city, index) in cities" @click="goToCity(city.woeid)" :key="index">
@@ -23,7 +23,7 @@
     </ul>
 </div>
 </template>
-<script src="./weather-list.component.vue.ts" lang="ts">
+<script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
 import { Inject } from '~/core';
@@ -59,7 +59,7 @@ export default class WeatherListComponent extends Vue {
     }
 }
 </script>
-<style src="./weather-list.component.vue.scss" lang="scss">
+<style  lang="scss">
 @import '~styles/variables';
 
 .weather_list {

@@ -1,4 +1,4 @@
-<template src="./city-list.component.vue.html" lang="html">
+<template  lang="html">
 <section class="city_list">
   <city-add></city-add>
 
@@ -13,7 +13,7 @@
   </ul>
 </section>
 </template>
-<script src="./city-list.component.vue.ts" lang="ts">
+<script  lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
 import { Inject } from '~/core';
@@ -43,7 +43,7 @@ export default class CityListComponent extends Vue {
     }
 }
 </script>
-<style src="./city-list.component.vue.scss" lang="scss">
+<style  lang="scss">
 @import '~styles/variables';
 
 .city_list {

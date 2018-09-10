@@ -1,4 +1,4 @@
-<template src="./weather-detail.component.vue.html" lang="html">
+<template lang="html">
 <div class="weather_detail" v-if="city">
   <header class="weather_detail-header">{{city.title}}</header>
 
@@ -25,7 +25,7 @@
   </ul>
 </div>
 </template>
-<script src="./weather-detail.component.vue.ts" lang="ts">
+<script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 
 import { Inject } from '~/core';
@@ -52,7 +52,7 @@ export default class WeatherDetailComponent extends Vue {
     }
 }
 </script>
-<style src="./weather-detail.component.vue.scss" lang="scss">
+<style lang="scss">
 @import '~styles/variables';
 
 .weather_detail {

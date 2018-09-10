@@ -1,10 +1,10 @@
-<template src="./city-detail.component.vue.html" lang="html">
+<template lang="html">
 <div class="city_detail" v-if="city">
   <header class="city_detail-header">{{city.title}}</header>
   <iframe class="city_detail-map" width="400" height="400" frameborder="0" :src="mapUrl" scrolling="no"></iframe>
 </div>
 </template>
-<script src="./city-detail.component.vue.ts" lang="ts">
+<script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 
 import { Inject } from '~/core';
@@ -27,7 +27,7 @@ export default class CityDetailComponent extends Vue {
     }
 }
 </script>
-<style src="./city-detail.component.vue.scss" lang="scss">
+<style lang="scss">
 @import '~styles/variables';
 
 .city_detail {
