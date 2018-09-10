@@ -1,3 +1,65 @@
-<script src="./city-list.component.vue.ts" lang="ts"></script>
-<style src="./city-list.component.vue.scss" lang="scss"></style>
-<template src="./city-list.component.vue.html" lang="html"></template>
+<template src="./city-list.component.vue.html" lang="html">
+<section class="city_list">
+  <city-add></city-add>
+
+  <loading v-if="!cities" />
+
+  <ul class="city_list-cities" v-if="cities">
+    <li class="city_list-city content-end" v-for="(city, index) in cities" :key="index">
+      <span class="city_list-title">{{city.title}}</span>
+      <router-link class="city_list-view badges-list-item" :to="{ name: 'city-detail', params: { id: city.woeid }}" title="view">➤</router-link>
+      <span class="city_list-close badges-list-item" @click="remove(city.woeid)" title="delete">×</span>
+    </li>
+  </ul>
+</section>
+</template>
+<script src="./city-list.component.vue.ts" lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+import { Inject } from '~/core';
+import { City, ICitiesService, LoadingComponent } from '~/shared';
+import { CityAddComponent } from '~/cities/shared';
+
+@Component({
+    components: {
+        CityAddComponent,
+        LoadingComponent,
+    }
+})
+export default class CityListComponent extends Vue {
+    public cities: City[] = null;
+
+    @Inject() citiesService: ICitiesService;
+
+    public async created(): Promise<void> {
+        // Fake example with loading
+        setTimeout(async () => {
+            this.cities = await this.citiesService.get();
+        }, 2000);
+    }
+
+    public remove(id: number): void {
+        this.citiesService.remove(id);
+    }
+}
+</script>
+<style src="./city-list.component.vue.scss" lang="scss">
+@import '~styles/variables';
+
+.city_list {
+  &-title {
+    margin-right: auto;
+  }
+
+  &-close {
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: color $animation-speed-default;
+
+    &:hover {
+      color: $color-secondary;
+      transition: color $animation-speed-default;
+    }
+  }
+}
+</style>
