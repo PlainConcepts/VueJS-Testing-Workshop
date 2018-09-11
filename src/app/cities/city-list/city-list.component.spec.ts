@@ -31,6 +31,7 @@ describe('CityListComponent', () => {
             wrapper.vm.remove();
         
             expect(spyCitiesServiceRemove).to.be.called;
+            spyCitiesServiceRemove.restore();
         });
     });
 });
