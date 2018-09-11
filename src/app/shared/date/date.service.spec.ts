@@ -1,6 +1,9 @@
-import { expect, should, assert } from 'chai';
+import 'test/unit/karma.vendor';
+import { expect } from 'chai';
 
 import { DateService } from './date.service';
+
+// Service test
 
 describe('DateService', () => {
     let dateService;

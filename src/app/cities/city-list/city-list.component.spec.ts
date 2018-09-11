@@ -4,7 +4,7 @@ import sinon from 'sinon'
 import { expect } from 'chai';
 
 import { mockInject } from '~/core';
-import { nextTick } from 'test/unit/helpers/nextTick';
+import { nextTick } from 'test/unit/helpers';
 import { default as CityListComponent } from './city-list.component.vue';
 
 // Simple Stub test
