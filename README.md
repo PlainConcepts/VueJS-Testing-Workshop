@@ -1,5 +1,8 @@
 # Unit testing with vue
 
+You can check [this article about testing](https://medium.com/@CKGrafico/how-to-test-your-javascript-components-b64179c5f386) before start with the workshop.
+Remember that all the examples are only examples, not necessary the best practise.
+
 1. Testing services/actions/helpers
 - Test all the public methods
 
